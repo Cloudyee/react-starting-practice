@@ -6,15 +6,11 @@ import NewPost from "./NewPost";
 import Modal from "./Modal";
 
 function PostsList(){
-    const[modalIsVisible, setModalIsVisible] = useState(true);
     const [enteredBody, setEnteredBody] = useState('');
     const [enteredAuthor, setEnteredAuthor]=useState('');
     // stateData[0] //현재값
     // stateData[1] //state 업데이트
     // 상태가 바뀔 때 마다 컴포넌트 함수가 재실행된다.
-    function hideModlHandler(){
-        setModalIsVisible(false);
-    }
 
 
     function bodyChangeHandler(event){
