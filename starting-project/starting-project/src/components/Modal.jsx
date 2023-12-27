@@ -4,12 +4,12 @@ import classes from './Modal.module.css';
 function Modal({children}){
     const navigate = useNavigate()
 
-    function colseHandler(){
+    function closeHandler(){
         navigate('..');
     }
 
     return <>
-        <div className={classes.backdrop} onClick={colseHandler}/>
+        <div className={classes.backdrop} onClick={closeHandler}/>
         <dialog open className={classes.modal}>
         {children}
         </dialog>

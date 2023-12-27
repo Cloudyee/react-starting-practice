@@ -8,7 +8,8 @@ function PostsList(){
     <>
          {posts.length>0 &&(
             <ul className={classes.posts}>
-                {posts.map((post)=><Post key={post.body} author={post.author} body={post.body}/>)}
+                {posts.map((post)=>
+                (<Post key={post.id} id={post.id} author={post.author} body={post.body}/>))}
             </ul>
          )}
          {posts.length === 0 && (<div style={{textAlignLast:'center', color:'white'}}>
