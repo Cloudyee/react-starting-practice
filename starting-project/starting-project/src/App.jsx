@@ -3,7 +3,7 @@ import MainHeader from "./components/MainHeader";
 import { useState } from "react";
 
 function App() {
-  const[modalIsVisible, setModalIsVisible] = useState(true);
+  const[modalIsVisible, setModalIsVisible] = useState(false);
 
   function showModalHandler(){
     setModalIsVisible(true);
@@ -14,9 +14,9 @@ function App() {
 
   return (
   <>
-    <MainHeader />
+    <MainHeader onCreatePost={showModalHandler}/>
     <main>
-      <PostsList />
+      <PostsList isPosting={modalIsVisible} onStopPosting={hideModlHandler}/>
     </main>
   </>
   );

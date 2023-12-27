@@ -5,47 +5,33 @@ import classes from "./PostsList.module.css"
 import NewPost from "./NewPost";
 import Modal from "./Modal";
 
-function PostsList(){
-    const [enteredBody, setEnteredBody] = useState('');
-    const [enteredAuthor, setEnteredAuthor]=useState('');
-    // stateData[0] //현재값
-    // stateData[1] //state 업데이트
-    // 상태가 바뀔 때 마다 컴포넌트 함수가 재실행된다.
+function PostsList({isPosting, onStopPosting}){
+    const [posts, setPosts]=useState([]);
 
-
-    function bodyChangeHandler(event){
-        setEnteredBody(event.target.value);
+    function addPostHandelr(postData){
+        setPosts((exstingPosts)=>[postData, ...exstingPosts]); //기존의 데이터를 유지하며 새로운 포스트를 갱신
     }
-
-    function authorChangeHandler(event){
-        setEnteredAuthor(event.target.value);
-    }
-
-    // let modalContent;
-
-    // if(modalIsVisible){
-    //     modalContent =  <Modal onClose={hideModlHandler}>
-    //     <NewPost 
-    //         onBodyChange = {bodyChangeHandler} 
-    //         onAuthorChange = {authorChangeHandler}
-    //     />
-    // </Modal>
-    // }
 
     return(
     <>
-            {modalIsVisible && (
-             <Modal onClose={hideModlHandler}>
+            {isPosting && (
+             <Modal onClose={onStopPosting}>
              <NewPost 
-                 onBodyChange = {bodyChangeHandler} 
-                 onAuthorChange = {authorChangeHandler}
+                 onCancel={onStopPosting}
+                 onAddPost={addPostHandelr}
              />
          </Modal>
          )}
+         {posts.length>0&&(
             <ul className={classes.posts}>
-                <Post author={enteredAuthor} body={enteredBody}/>
-                <Post author="wow" body="check this"/>
+                {posts.map((post)=><Post key={post.body} author={post.author} body={post.body}/>)}
             </ul>
+         )}
+         {posts.length === 0 && (<div style={{textAlignLast:'center', color:'white'}}>
+            <h2>There are no posts yet!</h2>
+            <p>Please Enter the posts</p>
+            </div>
+            )}
     </>
     );
 }
