@@ -4,18 +4,6 @@ import { useLoaderData } from "react-router-dom";
 
 function PostsList(){ 
     const posts = useLoaderData();
-
-    function addPostHandelr(postData){
-        fetch('http://localhost:8080/posts',{
-            method : 'POST',
-            body: JSON.stringify(postData), //stringify(): 데이터가 JSON 포맷으로 바뀜
-            headers:{
-                'Content-Type' : 'application/json'      //Content-Type에 따라 데이터를 받는 측에서는 데이터를 어떻게 처리해야 할 지 판단
-            }
-        }); //브라우저에서 제공, HTTP요청을 보낼 때 사용한다.
-        setPosts((exstingPosts)=>[postData, ...exstingPosts]); //기존의 데이터를 유지하며 새로운 포스트를 갱신
-    }
-
     return(
     <>
          {posts.length>0 &&(

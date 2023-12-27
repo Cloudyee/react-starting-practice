@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import Posts, {loader as postsLoader} from './routes/Posts'
-import NewPost from './routes/NewPost'
+import NewPost, {action as newPostAction} from './routes/NewPost'
 import RootLayout from './routes/RoutLayout'
 import './index.css'
 
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
       element : <Posts />,
       loader : postsLoader,
       children : [
-        {path:'/create-post', element : <NewPost />}]
+        {path:'/create-post', element : <NewPost />, action: newPostAction}]
       }, // 기본 도메인
     ],
   },
