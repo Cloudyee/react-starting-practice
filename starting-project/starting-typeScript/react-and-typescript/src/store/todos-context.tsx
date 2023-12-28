@@ -15,7 +15,7 @@ export const TodosContext = React.createContext<TodosContextObj>({
     removeTodo: ()=>{}
 });
 
-const TodosContextProvider=(props: any)=>{
+const TodosContextProvider: React.FC<{children?: React.ReactNode}>=(props: any)=>{
      //useState는 원래 제네릭 함수이다.
   //본인이 사용할 타입을 제네릭을 통해 설정해주면 됨.
   //해당 state로 관리될 것은 Todo 배열이라는 것을 명시
