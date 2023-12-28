@@ -1,7 +1,10 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
+import { TodosContext } from "../store/todos-context";
 import classes from "./NewTodo.module.css"
 
-const NewTodo: React.FC<{onAddTodo : (text: string)=> void}> = (props) => {
+const NewTodo: React.FC = () => {
+    const todosCtx = useContext(TodosContext);
+    
     //input = HTMLInputElement
     //button = HTMLParagraphElement
     //useRef에서 연결될 타입을 정해주고, 시작값을 설정해주어야 한다.
@@ -20,7 +23,7 @@ const NewTodo: React.FC<{onAddTodo : (text: string)=> void}> = (props) => {
             return;
         }
 
-        props.onAddTodo(enteredText);
+        todosCtx.addTodo(enteredText);
     }
 
     return(
