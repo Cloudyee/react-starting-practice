@@ -8,10 +8,10 @@ import { createSlice, configureStore } from '@reduxjs/toolkit';
 2. 리듀서를 어려개의 리듀서로 나눌 수 있다.
 3. Redux toolkit이라는 써드 파티를 활용한다! => 해당 방법을 채택하여 활용한다!!!
 */
-const intialState = {counter:0, showCounter:true};
+const intialCountState = {counter:0, showCounter:true};
 const counterSlice = createSlice({ //이를 사용하면 원래의 값을 변경시키지 않고도 손쉽게 이를 운용할 수 있다. 
     name : 'counter',
-    initialState : intialState,
+    initialState : intialCountState,
     reducers : {
         increment(state){
             state.counter++;
@@ -28,11 +28,28 @@ const counterSlice = createSlice({ //이를 사용하면 원래의 값을 변경
     }
 });
 
+const intialAuthenState = {
+    isAuthenticated : false
+};
+
+const authSlice = createSlice({
+    name:'authentication',
+    initialState: intialAuthenState,
+    reducers:{
+        login(state){
+            state.isAuthenticated = true;
+        },
+        logout(state){
+            state.isAuthenticated = false;
+        }
+    }
+});
 
 const store = configureStore({
-    reducer:counterSlice.reducer
+    reducer:{counter:counterSlice.reducer, auth: authSlice.reducer}
 });
 
 
 export const counterActions = counterSlice.actions;
+export const authActions = authSlice.actions;
 export default store;
