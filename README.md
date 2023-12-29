@@ -19,6 +19,14 @@
 <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/695417d3-2c20-47b0-9d1d-8ee9478ac2aa" width="500"/>
 <br>
 ✔️ 리액트와 타입스크립트를 활용한 목록 추가와 삭제 기능
+<br>
+<br>
+<li><h3><i>리덕스 응용</i></h3></li>
+<p>리덕스 개념 이해와 활용</p>
+<img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/b7786993-0d17-42ce-885f-648761642048" width="500"/>
+<br>
+✔️ 리덕스의 기념 개념을 학습, 활용
+
 </ul>
 <br>
-
+<br>
