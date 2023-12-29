@@ -23,6 +23,7 @@
 <br>
 <li><h3><i>리덕스 응용</i></h3></li>
 <p>리덕스 개념 이해와 활용</p>
+<img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/b7786993-0d17-42ce-885f-648761642048" width="500"/>
 <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/3e403b4e-6a99-4929-a81a-d5d19643b1e5" width="500"/>
 <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/158d315a-dae1-4c5d-af92-afbff1419b33" width="500"/>
 
