@@ -28,7 +28,7 @@
 <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/158d315a-dae1-4c5d-af92-afbff1419b33" width="500"/>
 
 <br>
-✔️ 리덕스의 기념 개념을 학습, 활용
+✔️ 리덕스의 기본 개념을 학습, 활용
 
 </ul>
 <br>
