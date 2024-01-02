@@ -1,4 +1,6 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
+import counterReducer from './counter'
+import authReducer from './auth'
 
 //식별자의 이름을 한번에 정의하고 이를 활용할 수 있다.
 //프로젝트가 커져 다양한 상태가 생기게 되면, 이러한 상태들을 한번에 복사해야하는 상황이 올 수 있다.
@@ -8,48 +10,11 @@ import { createSlice, configureStore } from '@reduxjs/toolkit';
 2. 리듀서를 어려개의 리듀서로 나눌 수 있다.
 3. Redux toolkit이라는 써드 파티를 활용한다! => 해당 방법을 채택하여 활용한다!!!
 */
-const intialCountState = {counter:0, showCounter:true};
-const counterSlice = createSlice({ //이를 사용하면 원래의 값을 변경시키지 않고도 손쉽게 이를 운용할 수 있다. 
-    name : 'counter',
-    initialState : intialCountState,
-    reducers : {
-        increment(state){
-            state.counter++;
-        },
-        decrement(state){
-            state.counter--;
-        },
-        increase(state,action){
-            state.counter = state.counter+action.payload;
-        },
-        toggleCounter(state){
-            state.showCounter = !state.showCounter;
-        }
-    }
-});
 
-const intialAuthenState = {
-    isAuthenticated : false
-};
-
-const authSlice = createSlice({
-    name:'authentication',
-    initialState: intialAuthenState,
-    reducers:{
-        login(state){
-            state.isAuthenticated = true;
-        },
-        logout(state){
-            state.isAuthenticated = false;
-        }
-    }
-});
 
 const store = configureStore({
-    reducer:{counter:counterSlice.reducer, auth: authSlice.reducer}
+    reducer:{counter:counterReducer, auth: authReducer}
 });
 
 
-export const counterActions = counterSlice.actions;
-export const authActions = authSlice.actions;
 export default store;
