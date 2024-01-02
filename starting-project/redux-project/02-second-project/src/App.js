@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 import Cart from './components/Cart/Cart';
 import Layout from './components/Layout/Layout';
@@ -15,6 +16,16 @@ function App() {
   따라서, 위 reducer의 키값 ui를 활용하여 이에 접근해야한다.
   */
   const showCart = useSelector(state=>state.ui.cartIsVisible);
+  const cart = useSelector(state=>state.cart);
+
+  //장바구니에 변경이 일어날 때 마다 요청이 날아감
+  useEffect(()=>{
+    fetch('https://react-practice-fd7f5-default-rtdb.firebaseio.com/cart.json',
+    {
+      method:'PUT', 
+      body:JSON.stringify(cart)
+    });
+  },[cart]);
 
   return (
     <Layout>
