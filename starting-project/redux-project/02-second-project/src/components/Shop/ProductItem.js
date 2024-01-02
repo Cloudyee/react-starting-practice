@@ -6,14 +6,15 @@ import { useDispatch } from 'react-redux';
 
 const ProductItem = (props) => {
   const { title, price, description, id } = props;
+  
   const dispatch = useDispatch();
 
   const addToCartHandler=()=>{
     dispatch(cartActions.addItemToCart(
-      id,
+      {id,
       title,
       price,
-      description
+      description}
     ));
   };
 
