@@ -34,9 +34,10 @@
 <br><br>
 <li><h3><i>고급 리덕스</i></h3></li>
 <p>리덕스 개념 복습, Devtool 활용</p>
-<img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/c6d06621-550b-4a54-bce9-9580dc3e1623" width="500"/>
+<img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/bd2ecde7-ba25-45a8-83b8-1658f4a35dc2" width="500"/>
+
 <br>
-✔️ 장바구니 기능
+✔️ 장바구니 아이템 추가, 조회기능
 </ul>
 <br>
 <br>
