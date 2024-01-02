@@ -3,6 +3,7 @@
 <br>
 <ul>
 <li><h3><i>'리액트 핵심기능 요약'</i>파트</h3></li>
+(starting-project)
 <p>리액트를 활용한 간단한 게시판 구현 프로젝트</p>
 <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/80e39678-ad10-4a2a-9bc2-3a7a04d2757b" width="500"/>
 <br>
@@ -15,13 +16,15 @@
 <br>
 
 <li><h3><i>리액트와 타입스크립트 활용</i></h3></li>
-  
+(starting-project/starting-typeScript)
+<br>
 <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/695417d3-2c20-47b0-9d1d-8ee9478ac2aa" width="500"/>
 <br>
 ✔️ 리액트와 타입스크립트를 활용한 목록 추가와 삭제 기능
 <br>
 <br>
 <li><h3><i>리덕스 응용</i></h3></li>
+(redux-project/01-starting-project)
 <p>리덕스 개념 이해와 활용</p>
 <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/b7786993-0d17-42ce-885f-648761642048" width="500"/>
 <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/3e403b4e-6a99-4929-a81a-d5d19643b1e5" width="500"/>
@@ -33,6 +36,7 @@
 
 <br><br>
 <li><h3><i>고급 리덕스</i></h3></li>
+(redux-project/02-second-project)
 <p>리덕스 개념 복습, Devtool 활용</p>
 <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/bd2ecde7-ba25-45a8-83b8-1658f4a35dc2" width="500"/>
 
