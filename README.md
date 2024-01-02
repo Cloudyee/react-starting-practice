@@ -16,7 +16,7 @@
 <br>
 
 <li><h3><i>리액트와 타입스크립트 활용</i></h3></li>
-(starting-project/starting-typeScript)
+(starting-typeScript/react-and-typescript)
 <br>
 <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/695417d3-2c20-47b0-9d1d-8ee9478ac2aa" width="500"/>
 <br>
