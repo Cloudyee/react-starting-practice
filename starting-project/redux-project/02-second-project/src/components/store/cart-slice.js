@@ -9,7 +9,6 @@ const cartSlice = createSlice({
     reducers:{
         addItemToCart(state, action){
             const newItem = action.payload;
-            console.log(newItem.id)
             //해당 항목이 이미 존재하는지 여부 확인
             const existingItem = state.items.find(item=> item.id === newItem.id);
             state.totalQuantity++;

@@ -5,7 +5,7 @@ import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
 
 function App() {
-  //state를 통해 현재 상태를 자도으로 수신
+  //state를 통해 현재 상태를 자동으로 수신
   //컴포넌트에서 활용할 데이터를 반환
   /*
   index.js의 코드를 살펴보면 아래와 같이 reudcer를 정의
