@@ -14,6 +14,7 @@ const Products = (props) => {
       {/* 위의 더미데이터를 아래에 동적 렌더링 */}
         {DUMMY_PRODUCTS.map((product)=>(
           <ProductItem
+            key={product.id}
             id={product.id} 
             title={product.title}
             price={product.price}
