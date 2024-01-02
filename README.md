@@ -28,8 +28,16 @@
 <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/158d315a-dae1-4c5d-af92-afbff1419b33" width="500"/>
 
 <br>
-✔️ 리덕스의 기본 개념을 학습, 활용
+✔️ 로그인 여부를 바탕으로 리덕스의 기본 개념을 학습, 활용
 
+
+<br><br>
+<li><h3><i>고급 리덕스</i></h3></li>
+<p>리덕스 개념 복습, Devtool 활용</p>
+<img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/c6d06621-550b-4a54-bce9-9580dc3e1623" width="500"/>
+<br>
+✔️ 장바구니 기능
 </ul>
 <br>
 <br>
+
