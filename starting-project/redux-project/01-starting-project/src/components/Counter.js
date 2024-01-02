@@ -37,5 +37,45 @@ const Counter = () => {
   );
 };
 
+//클래스 기반은 이제 많이 사용하지 않지만, 사용하는 경우도 있으니 알아두도록 하자.
+// class Counter extends Component{
+//   incrementHandler(){
+//     this.props.increment();
+//   }
+
+//   decrementHandler(){
+//     this.props.decrement();
+//   }
+
+//   toggleCounterHandler(){}
+
+//   rander(){
+//     return (
+//       <main className={classes.counter}>
+//         <h1>Redux Counter</h1>
+//         <div className={classes.value}>{this.props.counter}</div>
+//         <div>
+//           <button onClick={this.incrementHandler.bind(this)}>Increment</button>
+//           <button onClick={this.decrementHandler.bind(this)}>Decrement</button>
+//         </div>
+//         <button onClick={this.toggleCounterHandler}>Toggle Counter</button>
+//       </main>
+//     );
+//   }
+// }
+
+// const mapStateToProps=state=>{
+//   return{
+//     counter:state.counter
+//   };
+// }
+
+// const mapDispatchToProps = dispatch=>{
+//   return{
+//     increment : ()=>dispatch({type:'increment'}),
+//     decrement : ()=>dispatch({type:'decrement'}),
+//   }
+// };
+
 export default Counter;
 // export default connect(mapStateToProps,mapDispatchToProps)(Counter);
