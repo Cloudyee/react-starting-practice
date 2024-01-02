@@ -2,10 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 //객체로 변환
 const uiSlice = createSlice({
     name:'ui',
-    initialState : {cartIsVisible : false},
+    initialState : {cartIsVisible : false, notification:null},
     reducers:{
         toggle(state){
             state.cartIsVisible=!state.cartIsVisible;
+        },
+        showNotification(state, action){
+            state.notification={statue:action.payload.status, title:action.payload.title, 
+            message : action.payload.message};
         }
     }
 });
