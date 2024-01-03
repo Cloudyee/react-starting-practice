@@ -7,9 +7,9 @@ export const fetchCartData=()=>{
             const response = await fetch(
                 'https://react-practice-fd7f5-default-rtdb.firebaseio.com/cart.json'
                 );    
-                
+                console.log("요청 도달")
                 if(!response.ok){
-                    throw new Error('Coul not fetch art data!')
+                    throw new Error('Coul not fetch cart data!')
                 }
                 const data = await response.json();
                 

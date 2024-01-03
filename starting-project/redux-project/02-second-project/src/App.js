@@ -26,7 +26,7 @@ function App() {
   
   //처음 렌더링시 동작
   useEffect(()=>{
-    dispatch(fetchCartData);
+    dispatch(fetchCartData());
   },[dispatch]);
 
   //장바구니에 변경이 일어날 때 마다 요청이 날아감
