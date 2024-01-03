@@ -6,6 +6,7 @@ const cartSlice = createSlice({
     initialState : {
         items : [], //항목들
         totalQuantity: 0 ,
+        changed : false,
     },
     reducers:{
         replaceCart(state,action){
@@ -17,6 +18,7 @@ const cartSlice = createSlice({
             //해당 항목이 이미 존재하는지 여부 확인
             const existingItem = state.items.find(item=> item.id === newItem.id);
             state.totalQuantity++;
+            state.changed = true;
             if(!existingItem){
                 //리덕스는 원래 본래의 값을 바꾸면 안된다.
                 //리덕스 툴킷에서 이를 자동으로 설정해주기 때문에 우리는 .push를 활용할 수 있다.
@@ -36,6 +38,7 @@ const cartSlice = createSlice({
             const id = action.payload;
             const existingItem = state.items.find(item=>item.id ===id);
             state.totalQuantity--;
+            state.changed = true;
             if(existingItem.quantity === 1){
                 //id와 일치하지 않는 모든 항목을 유지
                 state.items = state.items.filter(item=>item.id!==id);

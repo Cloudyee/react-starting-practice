@@ -18,7 +18,11 @@ export const fetchCartData=()=>{
 
             try{
                 const cartData = await fetchData();
-                dispatch(cartActions.replaceCart(cartData));
+                dispatch(cartActions.replaceCart({
+                    //장바구니 데이터가 빈값인 경우 고려
+                    items : cartData.items || [],
+                    totalQuantity : cartData.totalQuantity,
+                }));
             }catch(error){
             //에러 발생시 오류 알림을 dispatch
             dispatch(uiActions.showNotification({
@@ -48,7 +52,11 @@ export const sendCartData = (cart) =>{
         const response = await fetch('https://react-practice-fd7f5-default-rtdb.firebaseio.com/cart.json',
             {
                 method:'PUT', 
-                body:JSON.stringify(cart)
+                body:JSON.stringify(
+                    {
+                        items: cart.items, 
+                        totalQuantity: cart.totalQuantity
+                    }),
             });
 
             if(!response.ok){

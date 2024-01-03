@@ -36,8 +36,13 @@ function App() {
       isInitial=false;
       return;
     }
-    //TODO: thunk에 대해 더 자세히 공부
-    dispatch(sendCartData(cart))
+    //add, remove 등의 동작시에만 
+    //= 로컬에서 변경되었을 경우에만 요청이 가도록 설정
+    if(cart.changed){
+          //TODO: thunk에 대해 더 자세히 공부
+      dispatch(sendCartData(cart));
+    }
+
   },[cart, dispatch]);
 
   return (
