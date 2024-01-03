@@ -1,5 +1,7 @@
 <h1>🌠첫 React 공부🌠</h1>
-<p> <b>Udemy React 완벽 가이드</b>강의 공부 코드들입니다.</p>
+<p> <b> 
+
+  [Udemy React 완벽 가이드](https://www.udemy.com/course/best-react/) </b>강의 공부 코드들입니다.</p>
 <br>
 <ul>
 <li><h3><i>'리액트 핵심기능 요약'</i>파트</h3></li>
