@@ -43,7 +43,7 @@
 <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/c3903f15-ac22-48d2-92d9-f44d94d10412" width="500"/>
 
 <br>
-✔️ 장바구니 아이템 추가, 조회, 서버 연결 및 호
+✔️ 장바구니 아이템 추가, 조회, 서버 연결 및 호출
 </ul>
 <br>
 <br>
