@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState, Fragment } from 'react';
-import { uiActions } from './components/store/ui-slice';
 import Cart from './components/Cart/Cart';
 import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
 import Notification from './components/UI/Notification';
+import { sendCartData } from './components/store/cart-slice';
 
 let isInitial = true;
 
@@ -27,45 +27,13 @@ function App() {
 
   //장바구니에 변경이 일어날 때 마다 요청이 날아감
   useEffect(()=>{
-    const sendCartData= async()=>{
-      dispatch(uiActions.showNotification({
-        status:'pending',
-        title: 'Sending...',
-        message : 'Sending cart data!'
-      }))
-      const response = await fetch('https://react-practice-fd7f5-default-rtdb.firebaseio.com/cart.json',
-      {
-        method:'PUT', 
-        body:JSON.stringify(cart)
-      });
-
-      if(!response.ok){
-      dispatch(uiActions.showNotification({
-        status:'error',
-        title: 'Error!',
-        message : 'Sent cart data failed...'
-      }))
-      }
-
-      dispatch(uiActions.showNotification({
-        status:'success',
-        title: 'Success!',
-        message : 'Sent cart data successfully!'
-      }))
-    };
-
     //처음 시작시 요청을 보내지 않음(카트 정보를 덮어씌우지 않기 위함)
     if(isInitial){
       isInitial=false;
       return;
     }
-    sendCartData().catch(error=>{
-      dispatch(uiActions.showNotification({
-        status:'error',
-        title: 'Error!',
-        message : 'Sent cart data failed...'
-      }))
-    });
+    //TODO: thunk에 대해 더 자세히 공부
+    dispatch(sendCartData(cart))
   },[cart, dispatch]);
 
   return (

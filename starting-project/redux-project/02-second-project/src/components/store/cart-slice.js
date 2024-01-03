@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { uiActions } from "./ui-slice";
+
 //객체로 변환
 const cartSlice = createSlice({
     name:'cart',
@@ -41,6 +43,52 @@ const cartSlice = createSlice({
         }
     }
 });
+
+export const sendCartData = (cart) =>{
+    return async (dispatch)=>{
+
+        //notification dispatch
+        dispatch(uiActions.showNotification({
+            status:'pending',
+            title: 'Sending...',
+            message : 'Sending cart data!'
+          })
+        );
+    
+
+    //비동기 함수
+    //요청을 전송
+    const sendRequest = async()=>{
+        const response = await fetch('https://react-practice-fd7f5-default-rtdb.firebaseio.com/cart.json',
+            {
+                method:'PUT', 
+                body:JSON.stringify(cart)
+            });
+
+            if(!response.ok){
+                throw new Error('Sending cart data failed.');
+            }
+        };
+
+    try{
+        await sendRequest();
+        //에러가 없을 시 성공문 dispatch
+        dispatch(uiActions.showNotification({
+            status:'success',
+            title: 'Success!',
+            message : 'Sent cart data successfully!'
+          }))
+    }catch(error){
+        //에러 발생시 오류 알림을 디스페치
+        dispatch(uiActions.showNotification({
+            status:'error',
+            title: 'Error!',
+            message : 'Sent cart data failed...'
+        }));
+    };
+
+    }
+};
 
 export const cartActions = cartSlice.actions;
 
