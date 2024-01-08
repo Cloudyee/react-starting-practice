@@ -6,7 +6,7 @@ export default function Player({initialName, symbol, isActive}){
     
     function changeNameHandler(event){
         console.log(event);
-        //event를 넘겨받는디ㅏ.
+        //event를 넘겨받는다.
         //event의 targer의 value 는 input창으로 들어온 입력값이다.
         setPlayerName(event.target.value);
     }
