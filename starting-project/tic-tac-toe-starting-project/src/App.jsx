@@ -3,17 +3,26 @@ import GameBoard from "./components/GameBoard"
 import Log from "./components/Log";
 import { useState } from "react"
 
-function App() {
-  const [activePlayer, setActivePlayer] =useState('X');
-  const[gameTurns, setGameTurns] = useState([]);
-
-  function handleSelectSquare(rowIndex, colIndex){
-    setActivePlayer((curActivePlayer)=>curActivePlayer==='X'? 'O' : 'X');
-    setGameTurns(prevTurns => {
-      let currentPlayer='X';
-      if(prevTurns>0 && prevTurns[0].player==='X'){
+function deriveActivePlayer(gameTurns){
+  let currentPlayer='X';
+      if(gameTurns.length>0 && gameTurns[0].player==='X'){
         currentPlayer='0';
       }
+  return currentPlayer;
+}
+
+function App() {
+  // const [activePlayer, setActivePlayer] =useState('X');
+  //기존 코드에서 상태 관리를 하나로 리팩터링 해주었다.
+  //상태변수의 초기값은 빈 배열이다. => GameBoard에서 버튼을 disabled하는 조건을 여기서 확인 가능하다.
+  const[gameTurns, setGameTurns] = useState([]);
+
+  const activePlayer = deriveActivePlayer(gameTurns);
+
+  function handleSelectSquare(rowIndex, colIndex){
+    // setActivePlayer((curActivePlayer)=>curActivePlayer==='X'? 'O' : 'X');
+    setGameTurns(prevTurns => {
+      // const currentPlayer = deriveActivePlayer(prevTurns);
 
       const updatedTurns = [{square : {row:rowIndex, col:colIndex}, player:activePlayer},
         ...prevTurns];
