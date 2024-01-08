@@ -17,9 +17,10 @@
 <li><h3><i>'리액트 핵심 - 연습 프로젝트'</i>파트</h3></li>
 (investment-calculator-project)
 <p>투자금 계산기 실습</p>
-<!-- <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/b003455a-a545-4cea-b13d-230bb5aa8c0e" width="500"/>
-<img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/df5b0cd8-7ad6-4ea4-a9ce-420ebe45a0fe" width="500"/>
- -->
+<img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/5429a678-0f3b-4650-9325-3beacecb8961" width="500"/>
+<br>
+✔️ 사용자 입력값에 따라 투자금의 값을 동적으로 표시
+<br>
 
 <br><br>
 <li><h3><i>'리액트 핵심기능 요약'</i>파트</h3></li>
