@@ -29,7 +29,8 @@ function App() {
   
   const activePlayer = deriveActivePlayer(gameTurns);
   
-  let gameBoard = initialGameBoard;
+  //기존 배열에 새로운 배열을 덮어 씌위도록 설정
+  let gameBoard = [...initialGameBoard.map(array=> [...array])];
 
   for(const turn of gameTurns){
       const{square, player} = turn;
@@ -68,6 +69,9 @@ function App() {
     })
   }
 
+  function handleRestart(){
+    setGameTurns([]);
+  }
 
   return (
     <main>
@@ -76,7 +80,7 @@ function App() {
           <Player initialName="player 1" symbol='X' isActive={activePlayer==='X'}/>
           <Player initialName="player 2" symbol='O' isActive={activePlayer==='O'}/>
         </ol>
-        {(winner || hasDraw) && <GameOver winner = {winner}/>}
+        {(winner || hasDraw) && <GameOver winner = {winner} onRestart={handleRestart}/>}
         <GameBoard 
           onSelectSquare={handleSelectSquare}
           board = {gameBoard}
