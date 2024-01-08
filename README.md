@@ -8,7 +8,9 @@
 <li><h3><i>'리액트 핵심 - 심화'</i>파트</h3></li>
 (tic-tac-toe-starting-project)
 <p>틱텍토 게임 실습</p>
-<!-- <img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/80e39678-ad10-4a2a-9bc2-3a7a04d2757b" width="500"/> -->
+<img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/b003455a-a545-4cea-b13d-230bb5aa8c0e" width="500"/>
+<img src="https://github.com/Cloudyee/react-starting-practice/assets/126961013/df5b0cd8-7ad6-4ea4-a9ce-420ebe45a0fe" width="500"/>
+
 
 <br><br>
 
