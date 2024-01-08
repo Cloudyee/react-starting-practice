@@ -1,35 +1,21 @@
 import { useState } from "react";
+import { WINNING_COMBINATIONS } from "./winning-combination";
 
-const initialGameBoard = [
-    [null, null, null],
-    [null, null, null],
-    [null, null, null]
-]
 
-export default function GameBoard({onSelectSquare, turns}){
-    let gameBoard = initialGameBoard;
-    for(const turn of turns){
-        const{square, player} = turn;
-        const {row, col} = square;
+//우승 조건 나열 작성 => import
+// const WINNING_OMINATIONS=[
+//     [
+//         {row:0, col:0},
+//         {row:0, col:1},
+//         {row:0, col:2} ...
+//     ]
+// ];
 
-        gameBoard[row][col] = player;
-    }
-
-    // const[gameBoard , setGameBoard]= useState(initialGameBoard);
-    // 
-    // function handelSelectSquare (rowIndex, colIndex){
-    //     setGameBoard((prevGameBoard)=>{
-    //         const updatedBoard = [...prevGameBoard.map(innerArray=>[...innerArray])];
-    //         updatedBoard[rowIndex][colIndex]= activePlayerSymbol;
-    //         return updatedBoard;
-    //     });
-    //     onSelectSquare();
-    // }
-
+export default function GameBoard({onSelectSquare, board}){
 
     return(
         <ol id="game-board">
-            {gameBoard.map((row, rowIndex)=>
+            {board.map((row, rowIndex)=>
             <li key={rowIndex}>
                 <ol>
                     {row.map((playSymbol , colIndex)=>
